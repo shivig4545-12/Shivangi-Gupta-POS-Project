@@ -13,6 +13,16 @@ export type Menu = {
   brands?: string[]
   branches?: string[]
   status?: 'active' | 'inactive'
+  // Nutrition properties
+  calories?: number
+  protein?: number
+  carbs?: number
+  fibre?: number
+  sugars?: number
+  sodium?: number
+  iron?: number
+  calcium?: number
+  vitaminC?: number
 }
 
 export const menuApi = baseApi.injectEndpoints({
