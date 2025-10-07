@@ -251,7 +251,7 @@ const POS = () => {
         total: totalAmount,  // Required field
         vatPercent,
         vatAmount,
-        discountType: discount ? (discount.type?.toLowerCase?.() === 'percent' ? 'percent' : 'flat') : undefined,
+        discountType: discount ? (discount.type?.toLowerCase?.() === 'percent' ? 'percent' as const : 'flat' as const) : undefined,
         discountAmount: discountAmountApplied,
         shippingCharge: deliveryCharge,
         rounding,
@@ -262,7 +262,7 @@ const POS = () => {
         note: notes,  // Field is 'note' not 'notes'
         paymentMode: selectedPaymentMode,
         payments: payments,
-        salesType: selectedPriceType === 'membership' ? 'membership' : selectedPriceType === 'online' ? 'online' : selectedPriceType === 'restaurant' ? 'restaurant' : undefined,
+        salesType: (selectedPriceType === 'membership' ? 'membership' : selectedPriceType === 'online' ? 'online' : selectedPriceType === 'restaurant' ? 'restaurant' : 'restaurant') as 'restaurant' | 'online' | 'membership',
         orderType: selectedOrderType === 'online' || selectedOrderType === 'membership' ? undefined : selectedOrderType || undefined,
         aggregatorId: selectedAggregator || undefined,
         brand: selectedBrand || undefined,
